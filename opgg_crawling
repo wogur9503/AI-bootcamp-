@@ -1,0 +1,81 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled18.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyONUjOefDckZm/FlAwYQxnt",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/wogur9503/AI-bootcamp-/blob/main/opgg_crawling\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 필요 라이브러리"
+      ],
+      "metadata": {
+        "id": "v0R1sDra5woh"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "n_wUYvit5spx"
+      },
+      "outputs": [],
+      "source": [
+        "from bs4 import BeautifulSoup as bs\n",
+        "from urllib.request import urlopen\n",
+        "import re\n",
+        "import requests\n",
+        "import pandas as pd"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# OP.GG 정보 크롤링하기"
+      ],
+      "metadata": {
+        "id": "je1K5wYU52E4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "url_opgg = 'https://www.op.gg/summoner/userName=%EB%A7%9B%EC%9E%88%EB%8A%94%EA%BD%81%EC%B9%98'\n",
+        "\n",
+        "html = urlopen(url_opgg) # 서버에 결과 요청\n",
+        "soup = bs(html, \"html.parser\")\n",
+        "\n",
+        "soup"
+      ],
+      "metadata": {
+        "id": "WCj9BuKy5vJK"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
